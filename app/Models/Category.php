@@ -27,4 +27,11 @@ class Category extends Model
     public function products(){
         return $this->hasManyThrough(Product::class, Subcategory::class);
     }
+
+
+    //este es el codigo para que no utilice los id para las redirecciones sino el campo slug
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
