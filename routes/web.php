@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ Route::get('/', WelcomeController::class);
 
 //como crear una ruta
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+//ruta para products
+Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 Route::middleware([
     'auth:sanctum',
