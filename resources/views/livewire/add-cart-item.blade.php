@@ -1,5 +1,4 @@
 <div x-data>
-
     <p class="text-gray-700 mb-4">
         <span class="font-semibold text-lg">Stock disponible: </span> {{ $quantity }}
     </p>
@@ -20,8 +19,8 @@
         </div>
 
         <div class="flex-1">
-            <x-button colorh="orange" wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem"
-                class="w-full">
+            <x-button colorh="orange" wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" disabled
+                x-bind:disabled="$wire.qty > $wire.quantity" class="w-full">
                 Agregar al carrito de compras
             </x-button>
         </div>
